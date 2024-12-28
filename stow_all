@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# If the user really wants to make the changes with stow, it must explicitly say it
+if [ "${1}" = "effective" ]; then
+  echo "Effectively running stow, dotfiles will be modified!"
+  STOW_FLAGS="-v"
+else
+  echo "Testing only, stow will be run in simulation mode! To effectively change stuff call the script again like 'stow_all effective'"
+  STOW_FLAGS="-vn"
+fi
+
+# For each directory in this folder
+for dir in */; do
+  # Remove trailing /
+  dir=${dir%*/}
+  # Call stow for this dir
+  stow "$STOW_FLAGS" "$dir"
+done
