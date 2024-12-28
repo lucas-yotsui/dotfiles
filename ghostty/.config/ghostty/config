@@ -1,0 +1,21 @@
+# Literally the best theme ever
+theme = luskinha 
+
+# Literally the best font ever
+font-family = "CaskaydiaCove Nerd Font"
+
+# Ligatures? Yes, please
+font-feature = "calt"
+
+# Mouse gets out of the way as soon as typing starts. 
+mouse-hide-while-typing = true
+
+# Makes it so that each tab, split and window is run independently.
+# This way, errors in one tab like OOM, do not interfere with the others.
+linux-cgroup = always
+
+# Setting above is more of a nice to have, does not render terminal unusable.
+linux-cgroup-hard-fail = false
+
+# Load the custom key bindings
+config-file = "keybindings"

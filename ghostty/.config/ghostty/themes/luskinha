@@ -1,0 +1,41 @@
+palette = 0=#080808
+palette = 1=#d81a33
+
+# Light green
+palette = 2=#00ff99
+
+# Yellow
+palette = 3=#f9d039
+
+# Light Blue
+palette = 4=#33ccff
+
+# Dark blue
+palette = 5=#3363f4
+
+#Acquamarine
+palette = 6=#32ffcc
+
+palette = 7=#dadada
+palette = 8=#8a8a8a
+palette = 9=#d75f5f
+
+# Lighter Acquamarine
+palette = 10=#b2ffe5
+
+palette = 11=#d7d7af
+
+# Dark Green
+palette = 12=#228b22
+
+palette = 13=#afafd7
+palette = 14=#87d7d7
+palette = 15=#dadada
+
+background = 050505
+foreground = f6f6f6
+
+cursor-color = eeeeee
+
+selection-background = b2ffe5
+selection-foreground = 050505
