@@ -1,0 +1,119 @@
+# Syntax highlighting
+# -------------------
+"attribute" = "light_green"
+
+"type" = "light_green"
+"type.enum.variant" = "aquamarine"
+
+"constructor" = "light_blue"
+
+"constant" = "text"
+"constant.character" = "text"
+"constant.character.escape" = "text"
+
+"string" = "light_green"
+"string.regexp" = "dark_green"
+"string.special" = "light_blue"
+"string.special.symbol" = "dark_blue"
+
+"comment" = { fg = "subtext", modifiers = ["italic"] }
+
+"variable" = "text"
+"variable.parameter" = { fg = "text", modifiers = ["italic"] }
+"variable.builtin" = "light_blue"
+"variable.other.member" = "light_blue"
+
+"label" = "dark_blue" # used for lifetimes
+
+"punctuation" = "subtext"
+"punctuation.special" = "subtext"
+
+"keyword" = "dark_blue"
+"keyword.control.conditional" = { fg = "dark_blue", modifiers = ["italic"] }
+
+"operator" = "sky"
+
+"function" = "light_blue"
+"function.macro" = "light_blue"
+
+"tag" = "dark_blue"
+
+"namespace" = { fg = "dark_green", modifiers = ["italic"] }
+
+"special" = "light_blue" # fuzzy highlight
+
+"diff.plus" = "light_green"
+"diff.minus" = "red"
+"diff.delta" = "light_blue"
+
+# User Interface
+# --------------
+"ui.background" = { fg = "text", bg = "base" }
+
+"ui.linenr" = { fg = "subtext" }
+"ui.linenr.selected" = { fg = "text" }
+
+"ui.statusline" = { fg = "text", bg = "window" }
+"ui.statusline.normal" = { fg = "text", bg = "window" }
+"ui.statusline.insert" = { fg = "text", bg = "window", modifiers = ["bold"]  }
+"ui.statusline.select" = { fg = "text", bg = "window", modifiers = ["italic"]  }
+
+"ui.popup" = { fg = "text", bg = "window" }
+"ui.window" = { fg = "text", bg = "window" }
+"ui.help" = { fg = "text", bg = "window" }
+
+"ui.bufferline" = { fg = "subtext0", bg = "mantle" }
+"ui.bufferline.active" = { fg = "mauve", bg = "base", underline = { color = "mauve", style = "line" } }
+"ui.bufferline.background" = { bg = "crust" }
+
+"ui.text" = "text"
+"ui.text.focus" = { fg = "text", bg = "window", modifiers = ["bold"] }
+"ui.text.inactive" = { fg = "subtext" }
+
+"ui.selection" = { bg = "highlight" }
+
+"ui.cursor" = { fg = "base", bg = "window" }
+"ui.cursor.primary" = { fg = "base", bg = "window" }
+"ui.cursor.match" = { fg = "subtext", modifiers = ["bold"] }
+
+"ui.cursor.primary.normal" = { fg = "base", bg = "text" }
+"ui.cursor.primary.insert" = { fg = "base", bg = "text" }
+"ui.cursor.primary.select" = { fg = "base", bg = "text" }
+
+"ui.cursor.normal" = { fg = "base", bg = "subtext" }
+"ui.cursor.insert" = { fg = "base", bg = "subtext" }
+"ui.cursor.select" = { fg = "base", bg = "subtext" }
+
+"ui.cursorline.primary" = { bg = "text" }
+
+"ui.highlight" = { bg = "subtext", modifiers = ["bold"] }
+
+"ui.menu" = { fg = "text", bg = "window" }
+"ui.menu.selected" = { fg = "text", bg = "window", modifiers = ["bold"] }
+
+"diagnostic.error" = { underline = { color = "red", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "yellow", style = "curl" } }
+"diagnostic.info" = { underline = { color = "subtext", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "subtext", style = "curl" } }
+
+error = "red"
+warning = "yellow"
+info = "subtext"
+hint = "subtext"
+
+[palette]
+light_blue = "#33ccff"
+dark_blue = "#3363f4"
+aquamarine = "#32ffcc"
+light_green = "#00ff99"
+dark_green = "#228b22"
+
+red = "#d81a33"
+yellow = "#f9d039"
+
+text = "#f6f6f6"
+subtext = "#909090"
+highlight = "#808080"
+window = "#141414"
+
+base = "#000000"

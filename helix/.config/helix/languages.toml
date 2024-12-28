@@ -1,0 +1,37 @@
+[[language]]
+name = "cpp"
+scope = "source.cpp"
+injection-regex = "cpp"
+file-types = ["cc", "hh", "c++", "cpp", "hpp", "h", "ipp", "tpp", "cxx", "hxx", "ixx", "txx", "ino", "C", "H", "cu", "cuh", "cppm", "h++", "ii", "inl", { glob = ".hpp.in" }, { glob = ".h.in" }]
+comment-token = "//"
+block-comment-tokens = { start = "/*", end = "*/" }
+language-servers = [ "clangd" ]
+indent = { tab-width = 2, unit = "  " }
+auto-format = true
+
+[[language]]
+name = "zig"
+
+[language.debugger]
+name = "lldb-dap"
+transport = "stdio"
+command = "lldb-dap"
+
+[[language.debugger.templates]]
+name = "binary"
+request = "launch"
+completion = [ { name = "binary", completion = "filename" } ]
+args = { console = "internalConsole", program = "{0}" }
+
+[[language.debugger.templates]]
+name = "attach"
+request = "attach"
+completion = [ "pid" ]
+args = { console = "internalConsole", pid = "{0}" }
+
+[[language.debugger.templates]]
+name = "gdbserver (arm-none-eabi)"
+request = "launch"
+runInTerminal = true
+completion = [ { name = "host", default = "localhost:3333" }, { name = "file", completion = "filename" }  ]
+args = { console = "internalConsole", program = "{1}", MIMode = "gdb", targetArchitecture = "arm", miDebuggerPath = "arm-none-eabi-gdb", miDebuggerServerAddress = "{0}", useExtendedRemote = true, stopAtEntry = true, initCommands = [ "platform select remote-gdb-server", "platform connect connect://{0}", "file {1}" ] }
