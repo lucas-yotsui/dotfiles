@@ -2,12 +2,13 @@
 keybind = clear
 
 # Important!
-keybind = global:super+t=toggle_quick_terminal
 keybind = ctrl+shift+comma=reload_config
+# Still only works on macOS, but I'm hopeful Linux will get it too eventually
+keybind = global:super+t=toggle_quick_terminal
 
 # Move
-keybind = page_up=scroll_page_up
-keybind = page_down=scroll_page_down
+keybind = ctrl+t>page_up=scroll_page_up
+keybind = ctrl+t>page_down=scroll_page_down
 keybind = ctrl+t>home=scroll_to_top
 keybind = ctrl+t>end=scroll_to_bottom
 
