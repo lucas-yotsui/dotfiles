@@ -1,0 +1,114 @@
+{
+    "layer": "top", 		// Waybar at top layer
+    "position": "top", 		// Waybar at the bottom of the screen
+    "height": 24, 			// Waybar height
+
+    // Choose the order of the modules
+    "modules-left": ["hyprland/workspaces", "custom/music-back", "custom/music", "custom/music-next"],
+    "modules-center": ["clock"],
+    "modules-right": ["pulseaudio", "bluetooth", "network", "cpu", "memory", "battery", "backlight"],
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": false,
+        "format": "{icon}",
+        "format-icons": {
+            "urgent": "",
+            "active": "",
+            "default": ""
+        }
+    },
+    "backlight": {
+	    "device": "intel_backlight",
+	    "format": "{percent}% {icon}",
+	    "format-icons": ["󰃞", "󰃟", "󰃝", "󰃠"]
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "on-click": "gnome-calendar",
+        "actions": {
+            "on-click-right": "mode"
+        },
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#32ffcc'><b>{}</b></span>",
+                "weekdays": "<span color='#33ccff'><b>{}</b></span>",
+                "today": "<span color='#00ff99'><b>{}</b></span>"
+            }
+        },    },
+    "cpu": {
+        "format": "{usage}% ",
+        "on-click": "ghostty -e btop"
+    },
+    "memory": {
+        "format": "{}% ",
+        "on-click": "ghostty -e btop"
+    },
+    "battery": {
+        "states": {
+            "full": 100,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-icons": {
+            "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+            "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰂉", "󰂊", "󰂋", "󱟢"],
+            "warning": "󱃍",
+            "critical": "󱃍"
+        },
+    },
+    "network": {
+        // "interface": "wlp2s0", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        "format-disconnected": "Disconnected ⚠",
+        "on-click": "iwgtk"
+    },
+    "bluetooth": {
+        "format": " ",
+        "format-disabled": " 󰂲",
+        "format-connected": "{num_connections} 󰂱",
+        "tooltip-format": "Click to connect to a device",
+        "tooltip-format-connected": "{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_battery_percentage}%",
+        "on-click": "blueman-manager"
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "Mute 󰝟",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/music": {
+        "exec": "~/.config/waybar/scripts/music",
+        "interval": 1,
+        "on-click": "playerctl play-pause"
+    },
+    "custom/music-back": {
+        "exec": "~/.config/waybar/scripts/music-back",
+        "interval": 1,
+        "on-click": "playerctl previous" 
+    },
+    "custom/music-next": {
+        "exec": "~/.config/waybar/scripts/music-next",
+        "interval": 1,
+        "on-click": "playerctl next"        
+    }
+}

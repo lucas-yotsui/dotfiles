@@ -1,0 +1,50 @@
+* {
+    /* border: none; */
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 15px;
+    font-weight: bold;
+}
+
+window#waybar {
+    background: black;
+    color: white;
+
+    border: none;
+    background: linear-gradient(45deg, rgba(51,204,255,238), rgba(0,255,153,238));
+    border-radius: 10px;
+    margin: 0;
+    /* border-radius: 6px; */
+}
+
+.horizontal {
+    background: black;
+    margin: 1px;
+    border-radius: 10px;
+}
+
+.modules-left, .modules-center, .modules-right {
+    margin: 0;
+    padding: 0;
+}
+
+.module {
+    margin-right: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#clock {
+    font-weight: bold;
+}
+
+#battery.warning:not(.charging) {
+    color: #f9d039;
+}
+
+#battery.critical:not(.charging) {
+    color: #d81a33;
+}
+
+#battery.full.charging {
+    color: #00ff99;
+}
