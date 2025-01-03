@@ -67,9 +67,12 @@
     },
     "network": {
         // "interface": "wlp2s0", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ",
-        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-        "format-disconnected": "Disconnected ⚠",
+        "format-wifi": "",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "format-ethernet": "",
+        "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}",
+        "format-disconnected": "⚠",
+        "tooltip-format-disconnected": "Disconnected",
         "on-click": "iwgtk"
     },
     "bluetooth": {
