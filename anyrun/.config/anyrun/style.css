@@ -1,0 +1,21 @@
+#window {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+box#main {
+  border: none;
+  background: linear-gradient(45deg, rgba(51,204,255,238), rgba(0,255,153,238));
+  border-radius: 10px;
+  padding: 1px;
+}
+
+list#main {
+  border: none;
+  border-radius: 10px;
+}
+
+#entry {
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 1px;
+}
