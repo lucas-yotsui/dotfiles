@@ -13,6 +13,11 @@ fi
 for dir in */; do
   # Remove trailing /
   dir=${dir%*/}
-  # Call stow for this dir
-  stow "$STOW_FLAGS" "$dir"
+  if [ "$dir" = "ly" ]; then
+    # ly has a single config.ini file that must be put in /etc/ly/
+    sudo stow -t /etc/ly "$STOW_FLAGS" "$dir"
+  else
+    # Call stow for this dir
+    stow "$STOW_FLAGS" "$dir"
+  fi
 done
