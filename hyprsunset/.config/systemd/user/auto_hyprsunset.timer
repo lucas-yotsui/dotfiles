@@ -1,0 +1,9 @@
+[Unit]
+Description=Aplly blue light filter automatically dependeding on the time of day
+
+[Timer]
+OnCalendar=*-*-* *:30:00
+OnStartupSec=1
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,26 @@
+#!/bin/bash
+
+if [[ -f "$HOME/.config/hypr/hyprsunset.conf" ]]; then
+	config_file=$(cat ~/.config/hypr/hyprsunset.conf)
+	
+	sunset_in_config=$(echo "$config_file"  | grep "sunset" | awk '{ print $3 }')
+	sunset="${sunset_in_config:-19:00}"
+
+	sunrise_in_config=$(echo "$config_file" | grep "sunrise" | awk '{ print $3 }')
+	sunrise="${sunrise_in_config:-05:00}"
+else
+	echo "File not found!"
+	
+	sunset="19:00"
+	sunrise="05:00"
+fi
+
+currenttime=$(date +%H:%M)
+if [[ "$currenttime" > "$sunset" ]] || [[ "$currenttime" < "$sunrise" ]]; then
+	pidof hyprsunset || hyprctl dispatch exec hyprsunset
+else 
+	hyprsunset=$(pidof hyprsunset)
+	if [[ -n "$hyprsunset" ]]; then
+		kill "$hyprsunset"
+	fi
+fi

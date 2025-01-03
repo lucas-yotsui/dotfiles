@@ -1,0 +1,6 @@
+[Unit]
+Description=Apply blue light filter
+
+[Service]
+Type=oneshot
+ExecStart=/home/%u/.local/share/auto_hyprsunset
