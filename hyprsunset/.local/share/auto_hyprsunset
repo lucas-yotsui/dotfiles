@@ -17,7 +17,7 @@ fi
 
 currenttime=$(date +%H:%M)
 if [[ "$currenttime" > "$sunset" ]] || [[ "$currenttime" < "$sunrise" ]]; then
-	pidof hyprsunset || hyprctl dispatch exec hyprsunset
+	pidof hyprsunset || hyprctl dispatch exec "hyprsunset -t 4500"
 else 
 	hyprsunset=$(pidof hyprsunset)
 	if [[ -n "$hyprsunset" ]]; then
