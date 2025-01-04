@@ -19,3 +19,6 @@ linux-cgroup-hard-fail = false
 
 # Load the custom key bindings
 config-file = "keybindings"
+
+# The window decorations don't look quite as good in Hyprland
+window-decoration = false
