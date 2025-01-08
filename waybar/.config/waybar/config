@@ -29,7 +29,7 @@
     },
     "clock": {
         "tooltip-format": "<tt>{calendar}</tt>",
-        "on-click": "gnome-calendar",
+        "on-click": "hyprctl dispatch exec [float] gnome-calendar",
         "actions": {
             "on-click-right": "mode"
         },
@@ -45,11 +45,11 @@
         },    },
     "cpu": {
         "format": "{usage}% ",
-        "on-click": "ghostty -e btop"
+        "on-click": "ghostty --class=com.lucas.btop -e btop"
     },
     "memory": {
         "format": "{}% ",
-        "on-click": "ghostty -e btop"
+        "on-click": "ghostty --class=com.lucas.btop -e btop"
     },
     "battery": {
         "states": {
@@ -73,7 +73,7 @@
         "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}",
         "format-disconnected": "⚠",
         "tooltip-format-disconnected": "Disconnected",
-        "on-click": "iwgtk"
+        "on-click": "ghostty --class=com.lucas.impala -e impala"
     },
     "bluetooth": {
         "format": " ",
@@ -82,7 +82,7 @@
         "tooltip-format": "Click to connect to a device",
         "tooltip-format-connected": "{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_battery_percentage}%",
-        "on-click": "blueman-manager"
+        "on-click": "ghostty --class=com.lucas.impala -e bluetui"
     },
     "pulseaudio": {
         "format": "{volume}% {icon}",
@@ -97,7 +97,7 @@
             "car": "",
             "default": ["", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "hyprctl dispatch exec [float] pavucontrol"
     },
     "custom/music": {
         "exec": "~/.config/waybar/scripts/music",
