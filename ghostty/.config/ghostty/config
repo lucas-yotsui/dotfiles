@@ -22,3 +22,6 @@ config-file = "keybindings"
 
 # The window decorations don't look quite as good in Hyprland
 window-decoration = false
+
+# If I close a window, it's because I want to close that window
+confirm-close-surface = false
