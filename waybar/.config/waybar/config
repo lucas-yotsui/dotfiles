@@ -44,12 +44,14 @@
             }
         },    },
     "cpu": {
-        "format": "{usage}% ",
-        "on-click": "ghostty --class=com.lucas.btop -e btop"
+        "format": "",
+        "tooltip-format": "{usage}%",
+        "on-click": "ghostty --class=com.lucas.widget -e btop"
     },
     "memory": {
-        "format": "{}% ",
-        "on-click": "ghostty --class=com.lucas.btop -e btop"
+        "format": "󰘚",
+        "tooltip-format": "{}%",
+        "on-click": "ghostty --class=com.lucas.widget -e btop"
     },
     "battery": {
         "states": {
@@ -73,7 +75,7 @@
         "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}",
         "format-disconnected": "⚠",
         "tooltip-format-disconnected": "Disconnected",
-        "on-click": "ghostty --class=com.lucas.impala -e impala"
+        "on-click": "ghostty --class=com.lucas.widget -e impala"
     },
     "bluetooth": {
         "format": " ",
@@ -82,7 +84,7 @@
         "tooltip-format": "Click to connect to a device",
         "tooltip-format-connected": "{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_battery_percentage}%",
-        "on-click": "ghostty --class=com.lucas.impala -e bluetui"
+        "on-click": "ghostty --class=com.lucas.widget -e bluetui"
     },
     "pulseaudio": {
         "format": "{volume}% {icon}",
@@ -97,7 +99,8 @@
             "car": "",
             "default": ["", ""]
         },
-        "on-click": "hyprctl dispatch exec [float] pavucontrol"
+        "tooltip-format": "{volume}%",
+        "on-click": "ghostty --class=com.lucas.widget -e wiremix"
     },
     "custom/music": {
         "exec": "~/.config/waybar/scripts/music",
