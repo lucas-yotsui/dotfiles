@@ -1,14 +1,12 @@
 * {
     /* border: none; */
-    font-family: "JetBrainsMono Nerd Font";
+    font-family: "CaskaydiaCove Nerd Font";
     font-size: 15px;
-    font-weight: bold;
 }
 
 window#waybar {
     background: black;
     color: white;
-
     border: none;
     background: linear-gradient(45deg, rgba(51,204,255,238), rgba(0,255,153,238));
     border-radius: 10px;
@@ -31,6 +29,11 @@ window#waybar {
     margin-bottom: 0;
 }
 
+.modules-right .module:hover {
+    color: #32ffcc;
+    padding-bottom: 4px;
+}
+
 #clock {
     font-weight: bold;
 }
@@ -43,6 +46,6 @@ window#waybar {
     color: #d81a33;
 }
 
-#battery.full.charging {
+#battery.charging.good, #battery.plugged.good {
     color: #00ff99;
 }

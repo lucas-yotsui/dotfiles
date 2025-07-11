@@ -24,12 +24,9 @@
     },
     "backlight": {
 	    "device": "intel_backlight",
-	    "format": "{percent}% {icon}",
-	    "format-icons": ["󰃞", "󰃟", "󰃝", "󰃠"]
-    },
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 10
+	    "format": "{icon}",
+	    "format-icons": ["󰃞", "󰃟", "󰃝", "󰃠"],
+        "tooltip-format": "{percent}% "
     },
     "clock": {
         "tooltip-format": "<tt>{calendar}</tt>",
@@ -46,7 +43,14 @@
                 "weekdays": "<span color='#33ccff'><b>{}</b></span>",
                 "today": "<span color='#00ff99'><b>{}</b></span>"
             }
-        },    },
+        },
+    },
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{icon}",
+        "format-icons": ["󱃃", "󰔏", "󱃂"],
+        "tooltip-format": "{temperatureC}°C"
+    },
     "cpu": {
         "format": "",
         "tooltip-format": "{usage}%",
@@ -59,21 +63,17 @@
     },
     "battery": {
         "states": {
-            "full": 100,
+            "good": 100,
+            "normal": 95,
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
-        "format-icons": {
-            "default": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-            "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰂉", "󰂊", "󰂋", "󱟢"],
-            "warning": "󱃍",
-            "critical": "󱃍"
-        },
+        "format": "{icon}",
+        "tooltip-format": "{capacity}%",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
     },
     "network": {
-        // "interface": "wlp2s0", // (Optional) To force the use of this interface
-        "format-wifi": "",
+        "format-wifi": "󰖩",
         "tooltip-format-wifi": "{essid} ({signalStrength}%)",
         "format-ethernet": "",
         "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}",
@@ -82,18 +82,18 @@
         "on-click": "ghostty --class=com.lucas.widget -e impala"
     },
     "bluetooth": {
-        "format": " ",
-        "format-disabled": " 󰂲",
-        "format-connected": "{num_connections} 󰂱",
+        "format": "",
+        "format-disabled": "󰂲",
+        "format-connected": "󰂱",
         "tooltip-format": "Click to connect to a device",
         "tooltip-format-connected": "{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_battery_percentage}%",
         "on-click": "ghostty --class=com.lucas.widget -e bluetui"
     },
     "pulseaudio": {
-        "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon}",
-        "format-muted": "Mute 󰝟",
+        "format": "{icon}",
+        "format-bluetooth": "󰂰",
+        "format-muted": "󰝟",
         "format-icons": {
             "headphones": "",
             "handsfree": "",
