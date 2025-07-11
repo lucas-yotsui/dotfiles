@@ -1,0 +1,59 @@
+* {
+  color: white;
+  font-size: 14px;
+  font-family: "CaskaydiaCove Nerd Font";
+  transition: 200ms;
+}
+
+.blank-window {  
+  background: @background;  
+}
+ 
+.control-center {
+  background: linear-gradient(45deg, rgba(51,204,255,238), rgba(0,255,153,238));
+  border-radius: 10px;
+  padding: 1px;
+  margin: 3px;
+}
+
+.control-center * {  
+  background: rgba(30, 30, 30, 1);
+  padding: 3px;
+}
+
+.control-center > :first-child {
+  border-radius: 10px 10px 0 0;
+}
+
+.control-center > :last-child {
+  border-radius: 0 0 10px 10px;
+}
+
+/* Notifications */
+.notification-row:focus, .notification-row:hover {
+  background: gray;
+}
+
+.notification-background {
+  background: linear-gradient(45deg, rgba(51,204,255,238), rgba(0,255,153,238));
+  padding: 1px;
+  border-radius: 10px;
+}
+
+.notification {
+  border-radius: 10px;
+}
+
+.notification-group:hover .notification-row *,
+.notification-row .notification:hover * {
+  background: transparent;
+}
+
+.notification-group:hover .notification-row .notification,
+.notification-row .notification:hover {
+  background: linear-gradient(45deg, rgba(51,204,255,238), rgba(0,255,153,238));
+}
+
+.notification-group.collapsed:hover * {
+  color: black;
+}

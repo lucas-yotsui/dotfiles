@@ -10,7 +10,7 @@
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces", "custom/music-back", "custom/music", "custom/music-next"],
     "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "bluetooth", "network", "cpu", "memory", "battery", "backlight"],
+    "modules-right": ["pulseaudio", "backlight", "bluetooth", "network", "temperature", "cpu", "memory", "battery", "custom/notification"],
 
     "hyprland/workspaces": {
         "disable-scroll": true,
@@ -105,6 +105,22 @@
         },
         "tooltip-format": "{volume}%",
         "on-click": "ghostty --class=com.lucas.widget -e wiremix"
+    },
+    "custom/notification": {
+        "tooltip-format": "{} new notifications!",
+        "format": "{icon}",
+        "format-icons": {
+			"none": "",
+            "notification": "",
+			"dnd-none": "",
+			"dnd-notification": "",
+		},
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
     },
     "custom/music": {
         "exec": "~/.config/waybar/scripts/music",
