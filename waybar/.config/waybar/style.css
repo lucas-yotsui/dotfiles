@@ -12,8 +12,6 @@ window#waybar {
     border: none;
     background: linear-gradient(45deg, rgba(51,204,255,238), rgba(0,255,153,238));
     border-radius: 10px;
-    margin: 0;
-    /* border-radius: 6px; */
 }
 
 .horizontal {

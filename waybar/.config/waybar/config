@@ -2,6 +2,10 @@
     "layer": "top", 		// Waybar at top layer
     "position": "top", 		// Waybar at the bottom of the screen
     "height": 24, 			// Waybar height
+    "margin-left": 3,
+    "margin-right": 3,
+    "margin-top": 0,
+    "margin-bottom": 3,
 
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces", "custom/music-back", "custom/music", "custom/music-next"],
